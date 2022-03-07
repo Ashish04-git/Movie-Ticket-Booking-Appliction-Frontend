@@ -1,0 +1,84 @@
+<!-- <a [routerLink]="['/booking']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          Add New Booking
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form #frm="ngForm" >
+           
+                <label for="id">Booking Id</label>
+                <input type="text" #id="ngModel" name="booking.transactionId" id="" class="form-control" placeholder="Enter Booking Id" required pattern="[0-9]{4}" [(ngModel)] = "booking.transactionId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Booking Id must be Entered<br>Only 4 digit ID
+            </div>
+            <br>
+           <div class="form-group" >
+                <label for="name">Booking Mode</label>
+                <input type="text"   name="booking.transactionMode" id="" class="form-control" placeholder="Enter Booking Mode"  required  [(ngModel)] = "booking.transactionMode">&nbsp;
+                
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Booking Cost</label>
+                <input type="text"   name="booking.totalCost" id="" class="form-control" placeholder="Enter Booking Cost" required  [(ngModel)] = "booking.totalCost">&nbsp;
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Booking Status</label>
+                <input type="text"   name="booking.transactionStatus" id="" class="form-control" placeholder="Enter Booking Status" required  [(ngModel)] = "booking.transactionStatus">&nbsp;
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Booking Date</label>
+                <input type="text"   name="booking.bookingDate" id="" class="form-control" placeholder="Enter Booking Date" required  [(ngModel)] = "booking.bookingDate">&nbsp;
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Ticket Id</label>
+                <input type="text"   name="booking.ticket.ticketId" id="" class="form-control" placeholder="Enter Ticket Id" required pattern="[0-9]{3}" [(ngModel)] = "booking.ticket.ticketId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Ticket Id must be Entered<br>Only 3 digit ID</div>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Customer Id</label>
+                <input type="text"   name="booking.customer.customerId" id="" class="form-control" placeholder="Enter Customer Id" required  [(ngModel)] = "booking.customer.customerId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Customer Id must be Entered</div>
+  
+            </div>
+            
+            <br>
+            <div class="form-group">
+                <label for="name">Show Id</label>
+                <input type="text"   name="booking.showId.showId" id="" class="form-control" placeholder="Enter Show Id" required  [(ngModel)] = "booking.showId.showId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Show Id must be Entered</div>
+  
+  
+            </div> 
+            
+            <br>
+            
+            <div class="from-group">
+                 <button type="submit"[disabled]="frm.invalid" (click)="addBooking()" class="btn btn-primary btn-md">Add Booking</button>
+            </div>
+            <br>
+        </form>
+      </div>
+    </div>
+  </div>
+

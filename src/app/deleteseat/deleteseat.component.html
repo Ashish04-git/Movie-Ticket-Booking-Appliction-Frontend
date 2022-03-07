@@ -1,0 +1,67 @@
+<!-- <a [routerLink]="['/seat']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="h4">
+        Delete Seat
+      </h1>
+      <hr>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-5">
+      
+      <form #frm="ngForm" >
+         
+              <label for="id">Enter Seat Id: </label>
+              <input type="text"  name="id" class="form-control" placeholder="Enter Seat Id" required [(ngModel)] = "id">&nbsp;
+             
+             <!-- <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry SeatId must be Entered
+          </div> -->
+          <br>
+        
+        <div class="from-group">
+               <button type="submit" (click)="getSeatById()" class="btn btn-primary btn-md">Get Seat</button>
+          </div>
+          <br>
+        <div *ngIf="flag"> 
+          <div class="form-group">
+              <label for="name">Seat Number:</label>
+              <input type="text"   name="seat.seatNumber"  class="form-control" placeholder="Enter Seat Number" required  [(ngModel)] = "seat.seatNumber" readonly>&nbsp;
+
+          </div>
+          
+          <br>
+          
+          <div class="form-group">
+              <label for="name">Seat Type:</label>
+              <input type="text"   name="seat.type"  class="form-control" placeholder="Enter Seat Type" required  [(ngModel)] = "seat.type" readonly>&nbsp;
+          </div>
+          <br>
+          
+          <div class="form-group">
+              <label for="name">Seat Price: </label>
+              <input type="text"   name="seat.price"  class="form-control" placeholder="Enter Seat Price" required  [(ngModel)] = "seat.price" readonly>&nbsp;
+          </div>
+          <br>
+          
+          <div class="form-group">
+              <label for="name">Ticket Id: </label>
+              <input type="text"   name="seat.ticket.ticketId" class="form-control" placeholder="Enter Ticket Id" required  [(ngModel)] = "seat.ticket.ticketId" readonly>&nbsp;
+          </div>
+          <br>
+          
+          <div class="from-group">
+               <button type="submit" [disabled]="frm.invalid" (click)="deleteSeat()" class="btn btn-primary btn-md">Cancel Seat</button>
+          </div>
+          <br>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+
+
+<router-outlet>
+
+    
+</router-outlet>
+
+<body>
+	<form action="/action_page.php">
+		<div class="imgcontainer">
+			<img src=
+"https://i.im.ge/2021/10/13/orSkYm.gif"
+				alt="Avatar" class="avatar">
+		</div>
+
+		<div class="container">
+			<label><b>Admin Id</b></label>
+			<input type="text" placeholder="Enter User Id" name="admin.adminId"  [(ngModel)]="admin.adminId" required>
+
+			<label><b>Admin Password</b></label>
+			<input type="password" placeholder="Enter Password" name="admin.password"  [(ngModel)]="admin.password" required>
+            <span>{{ msg }}</span>
+			<button (click)="check()" class="btn btn-primary">Login</button>
+
+		</div>
+
+		
+	</form>
+
+</body>
+
+
+
+
+

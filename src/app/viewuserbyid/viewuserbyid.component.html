@@ -1,0 +1,34 @@
+<!-- <a [routerLink]="['/user']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<h1><i><u>View User</u></i></h1>
+
+<form #frm="ngForm">
+    <table>
+        <tr>
+           <td> User ID :</td> 
+           <td><input type="text" width=50 name="user.userId" [(ngModel)]="user.userId"></td>
+        </tr>
+        <tr>
+            <button type="submit" (click)="viewUserById()" class="btn btn-primary btn-md">View User</button>
+        </tr>
+    </table>
+        <div *ngIf="flag">
+        <table>
+        <tr>
+            <td> User Password :</td> 
+            <td><input type="text" width=50 name="user.password" [(ngModel)]="user.password"></td>
+        </tr>
+        <tr>
+            <td> User Role :</td> 
+            <td><input type="text" width=50 name="user.role" [(ngModel)]="user.role"></td>
+        </tr>
+    
+    </table>
+    </div>
+
+</form>
+

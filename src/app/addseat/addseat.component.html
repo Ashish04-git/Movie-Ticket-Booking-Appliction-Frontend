@@ -1,0 +1,65 @@
+<!-- <a [routerLink]="['/seat']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          Book Seat
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form #frm="ngForm" >
+           
+                <label for="id">Seat Id</label>
+                <input type="text" #id="ngModel" name="seat.seatId" id="" class="form-control" placeholder="Enter Seat Id" required pattern="[0-9]{4}" [(ngModel)] = "seat.seatId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Seat Id must be Entered<br>Enter 4 numbers
+            </div>
+            <br>
+           <div class="form-group" >
+                <label for="name">Seat Number</label>
+                <input type="text"   name="seat.seatNumber" id="" class="form-control" placeholder="Enter Seat Number"  required pattern="[A-Z]{1}-[0-9]{3}" [(ngModel)] = "seat.seatNumber">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Enter seat number as EG: B-303</div>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Seat Type</label>
+                <input type="text"   name="seat.type" id="" class="form-control" placeholder="Enter Seat Type" required [(ngModel)] = "seat.type">&nbsp;
+                
+
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Seat Price</label>
+                <input type="text"   name="seat.price" id="" class="form-control" placeholder="Enter Seat Price" required  [(ngModel)] = "seat.price">&nbsp;
+  
+            </div>
+            <br>
+            
+            
+            <div class="form-group">
+                <label for="name">Ticket Id</label>
+                <input type="text"   name="seat.ticket.ticketId" id="" class="form-control" placeholder="Enter Ticket Id"  required pattern="[0-9]{3}" [(ngModel)] = "seat.ticket.ticketId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Ticket Id must be Entered<br>Enter 3 characters only</div>
+  
+            </div>
+            <br>
+           
+            
+            <div class="from-group">
+                 <button type="submit"[disabled]="frm.invalid" (click)="addSeat()" class="btn btn-primary btn-md">Book Seat</button>
+            </div>
+            <br>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,14 @@
+.background{
+    background-image: url("https://i.im.ge/2021/10/14/or0otx.gif") ;
+    background-repeat: no-repeat; 
+    background-size:cover;
+    height: 757px;
+}
+.button{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 320px;
+/* margin-top: 310px; */
+
+}

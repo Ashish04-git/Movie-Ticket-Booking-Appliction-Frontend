@@ -1,0 +1,64 @@
+<!-- <a [routerLink]="['/movie']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+ <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          Block Seat
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form #frm="ngForm" >
+           
+                <label for="id">Seat ID</label>
+                <input type="text" #id="ngModel" name="seat.seatId" id="" class="form-control" required [(ngModel)] = "seat.seatId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Enter Seat ID
+            </div>
+        
+
+        <div class="from-group">
+            <button type="submit"[disabled]="frm.invalid" (click)="blockseat()" class="btn btn-primary btn-md">Get Shows</button>
+       </div>
+        </form>
+<br><br>
+
+ <form>
+
+    
+        <form>
+            <div *ngIf="flag">
+            <table border="2" class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Seat ID</th>
+                    <th>Seat Number</th>
+                    <th>Seat Type</th>
+                    <th>Seat cost</th>
+                    <th>Ticket ID</th>
+                    <th>Seat count</th>
+                    
+                </tr>
+                </thead>
+                <tr *ngFor="let m of seats">
+                    <td>{{m.seatId}}</td>
+                    <td>{{m.seatNumber}}</td>
+                    <td>{{m.type}}</td>
+                    <td>{{m.price}}</td>
+                    <td>{{m.ticket.ticketId}}</td>
+                    <td>{{m.ticket.noOfSeats}}</td>
+        
+        
+                </tr>
+        
+        
+            </table>
+            </div>
+        </form>

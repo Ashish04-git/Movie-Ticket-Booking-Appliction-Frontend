@@ -1,0 +1,60 @@
+<!-- <a [routerLink]="['/customer']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          View Customer By Movie
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form #frm="ngForm" >
+           
+                <label for="id">Movie Id</label>
+                <input type="text" #id="ngModel" name="cust.movie.movieId" id="" class="form-control" placeholder="Enter Movie Id" required [(ngModel)] = "cust.movie.movieId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Movie Id must be Entered
+            </div>
+        
+
+        <div class="from-group">
+            <button type="submit"[disabled]="frm.invalid" (click)="getCustByMovieId()" class="btn btn-primary btn-md">Get Customers</button>
+       </div>
+        </form>
+<br><br>
+<form>
+
+    <div *ngIf="flag">
+    <table border="2"  class="table table-hover">
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>User ID</th>
+            <th>User Pass</th>
+            <th>Movie ID</th>
+            <th>Movie Name</th>
+        </tr>
+        <tr *ngFor="let c of customers">
+            <td>{{c.customerId}}</td>
+            <td>{{c.customerName}}</td>
+            <td>{{c.address}}</td>
+            <td>{{c.user.userId}}</td>
+            <td>{{c.user.password}}</td>
+            <td>{{c.movie.movieId}}</td>
+            <td>{{c.movie.movieName}}</td>
+            
+    
+        </tr>
+    
+    </table>
+    </div>
+</form>

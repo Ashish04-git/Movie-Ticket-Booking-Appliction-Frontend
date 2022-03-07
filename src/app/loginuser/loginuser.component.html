@@ -1,0 +1,29 @@
+<router-outlet>
+
+    
+</router-outlet>
+
+<body>
+	<form action="/action_page.php">
+		<div class="imgcontainer">
+			<img src=
+"https://i.im.ge/2021/10/13/orSkYm.gif"
+				alt="Avatar" class="avatar">
+		</div>
+
+		<div class="container">
+			<label><b>User Id</b></label>
+			<input type="text" placeholder="Enter User Id" name="user.userId"  [(ngModel)]="user.userId" required>
+
+			<label><b>User Password</b></label>
+			<input type="password" placeholder="Enter Password" name="user.password"  [(ngModel)]="user.password" required>
+            <span>{{ msg }}</span>
+			<button (click)="check2()" class="btn btn-primary">SIGN IN</button>
+			<button [routerLink]="['/addcust']" class="btn btn-primary">SIGN UP</button>
+
+		</div>
+
+		
+	</form>
+
+</body>

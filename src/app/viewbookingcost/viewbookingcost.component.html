@@ -1,0 +1,49 @@
+<!-- <a [routerLink]="['/booking']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          View Booking Cost
+        </h1>
+        <hr>
+        </div>
+       </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form>
+        
+          <div class="from-group">
+           
+                <label for="name">Booking ID: </label>
+                <input type="text" name="booking.transactionId" id="" class="form-control" placeholder="Enter Booking ID" required [(ngModel)] = "booking.transactionId">&nbsp;
+            
+               
+           </div>
+            <br>
+            <div class="from-group">
+                <button (click)="getBookingByCost()" class="btn btn-primary btn-md"><i class ="fas fa-film">&nbsp;</i>Booking</button>
+            </div>
+               <br>
+        
+     
+        <div *ngIf="flag">
+           
+           <div class="form-group">
+               <label for="name">Booking Cost</label>
+               <input type="text"  name="booking.totalCost" id="" class="form-control" placeholder="Enter Booking Cost" required  [(ngModel)] = "booking.totalCost">&nbsp;
+ 
+           </div>
+           
+        </div>
+        
+          </form> 
+        
+    </div>
+</div>

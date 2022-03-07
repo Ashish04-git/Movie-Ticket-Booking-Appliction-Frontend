@@ -1,0 +1,62 @@
+<!-- <a [routerLink]="['/show']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+
+ <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          Add New Show
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form #frm="ngForm" >
+           
+                <label for="id">Show Id: </label>
+                <input type="text" #id="ngModel" name="show.showId" id="" class="form-control" placeholder="Enter Show Id" required pattern="[0-9]{2,3}" [(ngModel)] = "show.showId">&nbsp;
+               
+            <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry ShowId must be Entered<br>Enter minimum 2 and maximum 3 digits
+            </div>
+            <br>
+           <div class="form-group" >
+                <label for="name">Show Start Time: </label>
+                <input type="text"   name="show.showStartTime" id="" class="form-control" placeholder="Enter Show Start Time"  required  [(ngModel)] = "show.showStartTime">&nbsp;
+                
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Show End Time: </label>
+                <input type="text"   name="show.showEndTime" id="" class="form-control" placeholder="Enter Show End Time" required  [(ngModel)] = "show.showEndTime">&nbsp;
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Show Screen Id: </label>
+                <input type="text"   name="show.screens.screenId" id="" class="form-control" placeholder="Enter Show Screen Id" required  [(ngModel)] = "show.screens.screenId">&nbsp;
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Show Movie Id: </label>
+                <input type="text"   name="show.movie.movieId" id="" class="form-control" placeholder="Enter Show Movie Id" required pattern="[0-9]{1,2}" [(ngModel)] = "show.movie.movieId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Movie ID must be Entered<br>New movie for new show</div>
+
+            </div>
+            <br>
+        
+            <div class="from-group">
+                 <button type="submit"[disabled]="frm.invalid" (click)="addShow()" class="btn btn-primary btn-md">Add Show</button>
+            </div>
+            <br>
+        </form>
+      </div>
+    </div>
+  </div>

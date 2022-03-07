@@ -1,0 +1,48 @@
+<!-- <a [routerLink]="['/seat']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="h4">
+        Seat List
+      </h1>
+     
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-sm table-primary">
+          <thead class="table-success" style="border:5px double">
+            <tr>
+              <th>Seat ID</th>
+            <th>Seat Number</th>
+            <th>Seat Type</th>
+            <th>Seat cost</th>
+            <th>Ticket ID</th>
+            <th>Seat count</th>
+              
+            </tr>
+        </thead>
+        <tbody style="border:5px double">
+          <tr *ngFor = "let m of seats" style="border:5px double">
+             <td>{{m.seatId}}</td>
+            <td>{{m.seatNumber}}</td>
+            <td>{{m.type}}</td>
+            <td>{{m.price}}</td>
+            <td>{{m.ticket.ticketId}}</td>
+            <td>{{m.ticket.noOfSeats}}</td>
+
+             
+          </tr>
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>

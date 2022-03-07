@@ -1,0 +1,56 @@
+
+
+
+<!-- <a [routerLink]="['/show']" class ="btn btn-danger">Back</a> -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="h4">
+        Show List
+      </h1>
+     
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-sm table-primary">
+          <thead class="table-success" style="border:5px double">
+            <tr>
+                <th>Show ID</th>
+                <th>Show start time</th>
+                <th>Show end time</th>
+                <th>Screen Name</th>
+                <th>Movie ID</th>
+                <th>Movie Name</th>
+                <th>Theatre ID</th>
+                <th>Theatre Name</th>
+        
+    
+        
+              
+            </tr>
+        </thead>
+        <tbody style="border:5px double">
+          <tr *ngFor = "let s of shows" style="border:5px double">
+            
+        <td>{{s.showId}}</td>
+        <td>{{s.showStartTime}}</td>
+        <td>{{s.showEndTime}}</td>
+        <td>{{s.screens.screenName}}</td>
+        <td>{{s.movie.movieId}}</td>
+        <td>{{s.movie.movieName}}</td>
+        <td>{{s.movie.theatre.theatreId}}</td>
+        <td>{{s.movie.theatre.theatreName}}</td>
+
+
+          
+
+             
+          </tr>
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>

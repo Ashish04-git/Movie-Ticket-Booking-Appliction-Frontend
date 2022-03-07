@@ -1,0 +1,52 @@
+
+
+
+
+<!-- <a [routerLink]="['/movie']" class ="btn btn-danger">Back</a> -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="h4">
+        Movie List
+      </h1>
+     
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-sm table-primary">
+          <thead class="table-success" style="border:5px double">
+            <tr>
+                <th>Movie ID</th>
+            <th>Movie Name</th>
+            <th>Genre</th>
+            <th>Language</th>
+            <th>Duration</th>
+            <th>Theatre ID</th>
+            <th>Theatre Name</th>
+
+        
+              
+            </tr>
+        </thead>
+        <tbody style="border:5px double">
+          <tr *ngFor = "let m of movies" style="border:5px double">
+            
+            <td>{{m.movieId}}</td>
+            <td>{{m.movieName}}</td>
+            <td>{{m.movieGenre}}</td>
+            <td>{{m.language}}</td>
+            <td>{{m.movieHours}}</td>
+            <td>{{m.theatre.theatreId}}</td>
+            <td>{{m.theatre.theatreName}}</td>
+
+
+             
+          </tr>
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>

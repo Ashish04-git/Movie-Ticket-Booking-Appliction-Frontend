@@ -1,0 +1,77 @@
+<!-- <a [routerLink]="['/movie']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+        Delete Movie
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+  <div class="col-5">
+    
+      
+            <form>
+                <div class="from-group">
+                    <label for="name">Movie Id</label>
+                    <input type="text" name="id" id="" class="form-control" placeholder="Enter Movie Id" [(ngModel)] = "id">
+                </div>
+                <br>
+                <div class="from-group">
+                    <button (click)="viewMovieById()" class="btn btn-warning btn-md">Get Movie</button>
+                </div>
+                <br>
+            </form>
+        </div>
+         <div *ngIf = "flag">
+            <form>
+                
+                <div class="from-group">
+                    <label for="name">Movie Name</label>
+                    <input type="text" name="movie.movieName" id="" class="form-control" placeholder="Enter Movie Name" [(ngModel)] = "movie.movieName" readonly>
+                </div>
+                <br>
+                <br>
+            <div class="form-group">
+                <label for="name">Movie Genre</label>
+                <input type="text"   name="movie.movieGenre" id="" class="form-control" placeholder="Enter MovieGenre"  [(ngModel)] = "movie.movieGenre" readonly>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Movie Hours</label>
+                <input type="text"   name="movie.movieHours" id="" class="form-control" placeholder="Enter Movie Hours"   [(ngModel)] = "movie.movieHours" readonly>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Movie Language</label>
+                <input type="text"   name="movie.language" id="" class="form-control" placeholder="Enter Movie Language"   [(ngModel)] = "movie.language" readonly>
+  
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="name">Theatre Id</label>
+                <input type="text"   name="movie.theatre.theatreId" id="" class="form-control" placeholder="Enter theatreId"  [(ngModel)] = "movie.theatre.theatreId" readonly>
+  
+            </div>
+
+           
+            <br>
+            <div class="from-group">
+              <button (click)="deleteMovie()" class="btn btn-danger btn-md"><i class="far fa-trash-alt">&nbsp;</i>Delete Movie</button>  
+            </div>
+                
+            </form>
+        </div>
+      </div>
+    </div>
+
+

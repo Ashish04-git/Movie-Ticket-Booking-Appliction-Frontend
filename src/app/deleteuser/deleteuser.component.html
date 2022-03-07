@@ -1,0 +1,46 @@
+<!-- <a [routerLink]="['/user']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+<!-- <h1><i><u>Delete User</u></i></h1>
+
+<form>
+    <table>
+        <tr>
+           <td> User ID :</td> 
+           <td><input type="text" width=50 name="user.userId" [(ngModel)]="user.userId"></td>
+        </tr>
+    </table>
+
+</form>
+<button (click)="deleteUser()" class="btn btn-primary">Delete User</button> -->
+
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+        Delete User
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+  <div class="col-5">
+    
+      
+            <form>
+                <div class="from-group">
+                    <label for="name">User Id</label>
+                    <input type="text" name="user.userId"  class="form-control" placeholder="Enter User Id" [(ngModel)] = "user.userId">
+                </div>
+                <br>
+            <div class="from-group">
+              <button (click)="deleteUser()" class="btn btn-danger btn-md"><i class="far fa-trash-alt">&nbsp;</i>Delete User</button>  
+            </div>
+                
+            </form>
+        </div>
+      </div>
+    </div>

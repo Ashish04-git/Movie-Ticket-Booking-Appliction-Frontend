@@ -1,0 +1,62 @@
+<!-- <a [routerLink]="['/show']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+ <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          View Show By Date
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form #frm="ngForm" >
+           
+                <label for="id">Date</label>
+                <input type="text" #id="ngModel" name="show.showStartTime" id="" class="form-control" placeholder="Enter Show Start Time" required [(ngModel)] = "show.showStartTime">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Show Start Time must be Entered
+            </div>
+        
+
+        <div class="from-group">
+            <button type="submit"[disabled]="frm.invalid" (click)="viewShowByDate()" class="btn btn-primary btn-md">Get Shows</button>
+       </div>
+        </form>
+<br><br>
+
+ <form>
+
+    <div *ngIf="flag">
+    <table border="2"  class="table table-hover">
+        <tr>
+            <th>Show ID</th>
+            <th>Show start time</th>
+            <th>Show end time</th>
+            <th>Screen Name</th>
+            <th>Movie ID</th>
+            <th>Movie Name</th>
+            <th>Theatre ID</th>
+            <th>Theatre Name</th>
+        </tr>
+        <tr *ngFor="let s of shows">
+            <td>{{s.showId}}</td>
+            <td>{{s.showStartTime}}</td>
+            <td>{{s.showEndTime}}</td>
+            <td>{{s.screens.screenName}}</td>
+            <td>{{s.movie.movieId}}</td>
+            <td>{{s.movie.movieName}}</td>
+            <td>{{s.movie.theatre.theatreId}}</td>
+            <td>{{s.movie.theatre.theatreName}}</td>
+            
+    
+        </tr>
+    
+    </table>
+    </div>
+</form>

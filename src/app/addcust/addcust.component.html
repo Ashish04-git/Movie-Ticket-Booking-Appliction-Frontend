@@ -1,0 +1,65 @@
+<!-- <a [routerLink]="['/customer']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+
+
+<div class="container mt-4">
+   <div class="row">
+     <div class="col-12">
+       <h1 class="h4">
+         Add New Customer
+       </h1>
+       <hr>
+     </div>
+   </div>
+   <div class="row" >
+     <div class="col-5">
+       
+       <form #frm="ngForm" >
+          
+               <label for="id">Customer Id</label>
+               <input type="text" #id="ngModel" name="cust.customerId" id="" class="form-control" placeholder="Enter Customer Id" pattern="[0-9]{1,2}" required [(ngModel)] = "cust.customerId">&nbsp;
+               <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Customer Id must be Entered<br>Enter a number maximum 2 digit
+           </div>
+           <br>
+          <div class="form-group" >
+               <label for="name">Customer Name</label>
+               <input type="text"   name="cust.customerName" id="" class="form-control" placeholder="Enter Customer Name"  required pattern="[a-zA-z]{3,}" [(ngModel)] = "cust.customerName">&nbsp;
+               <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Enter minimum 3 letters</div>
+ 
+           </div>
+           <br>
+           <div class="form-group">
+               <label for="name">Customer Address</label>
+               <input type="text"   name="cust.address" id="" class="form-control" placeholder="Enter Customer Address" required  [(ngModel)] = "cust.address">&nbsp;
+ 
+           </div>
+           <br>
+           <div class="form-group">
+               <label for="name">User Id</label>
+               <input type="text"   name="cust.user.userId" id="" class="form-control" placeholder="Enter User Id" required pattern="[0-9]{1,2}" [(ngModel)] = "cust.user.userId">&nbsp;
+               <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry User Id must be Entered<br>Enter maximum 2 digits</div>
+ 
+           </div>
+           <br>
+           <div class="form-group">
+               <label for="name">Movie Id</label>
+               <input type="text"   name="cust.movie.movieId" id="" class="form-control" placeholder="Enter Movie Id" required pattern="[0-9]{1,2}" [(ngModel)] = "cust.movie.movieId">&nbsp;
+               <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Sorry Movie Id must be Entered<br><br>Enter maximum 2 digits</div>
+ 
+ 
+           </div> 
+           
+           <br>
+           
+           <div class="from-group">
+                <button type="submit"[disabled]="frm.invalid" (click)="addCust()" class="btn btn-primary btn-md">Add Customer</button>
+           </div>
+           <br>
+       </form>
+     </div>
+   </div>
+ </div>

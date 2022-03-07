@@ -1,0 +1,61 @@
+<!-- <a [routerLink]="['/movie']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          View Movie By ID
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-5">
+        
+        <form #frm="ngForm" >
+           
+                <label for="id">Movie ID</label>
+                <input type="text" #id="ngModel" name="movie.movieId" id="" class="form-control" placeholder="Enter Movie ID" required [(ngModel)] = "movie.movieId">&nbsp;
+                <div class="from-group" *ngIf="id.invalid" class="alert alert-danger">Movie ID must be Entered
+            </div>
+        
+
+        <div class="from-group">
+            <button type="submit"[disabled]="frm.invalid" (click)="viewMovieById()" class="btn btn-primary btn-md">Get Movies</button>
+       </div>
+        </form>
+<br><br>
+
+<form>
+    <div *ngIf="flag">
+        <table border="2" class="table table-hover">
+            <tr>
+                <th>Movie ID</th>
+                <th>Movie Name</th>
+                <th>Genre</th>
+                <th>Language</th>
+                <th>Duration</th>
+                <th>Theatre ID</th>
+                <th>Theatre Name</th>
+            </tr>
+            <tr>
+                <td>{{movie.movieId}}</td>
+                <td>{{movie.movieName}}</td>
+                <td>{{movie.movieGenre}}</td>
+                <td>{{movie.language}}</td>
+                <td>{{movie.movieHours}}</td>
+                <td>{{movie.theatre.theatreId}}</td>
+                <td>{{movie.theatre.theatreName}}</td>
+                
+        
+            </tr>
+        
+        
+        </table>
+        </div>
+    </form>
+    

@@ -1,0 +1,77 @@
+<!-- <a [routerLink]="['/customer']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+        Delete Customer
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+  <div class="col-5">
+    
+            <form>
+                <div class="from-group">
+                    <label for="name">Customer Id</label>
+                    <input type="text" name="id" id="" class="form-control" placeholder="Enter Customer Id" [(ngModel)] = "id">
+                </div>
+                <br>
+                <div class="from-group">
+                    <button (click)="getCustById()" class="btn btn-warning btn-md">Get Customer</button>
+                </div>
+                <br>
+            </form>
+        </div>
+         <div *ngIf = "flag">
+            <form>
+
+                <br>
+                <div class="from-group">
+                    <label for="name">Customer Name</label>
+                    <input type="text" name="cust.customerName" id="" class="form-control" placeholder="Enter Customer Name" [(ngModel)] = "cust.customerName" readonly>
+                </div>
+                <br>
+                <br>
+            <div class="form-group">
+                <label for="name">Customer Address</label>
+                <input type="text"   name="cust.address" id="" class="form-control" placeholder="Enter Customer Address"  [(ngModel)] = "cust.address" readonly>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">User Id</label>
+                <input type="text"   name="cust.user.userId" id="" class="form-control" placeholder="Enter User Id"   [(ngModel)] = "cust.user.userId" readonly>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Password</label>
+                <input type="text"   name="cust.user.password" id="" class="form-control" placeholder="Enter Password"  [(ngModel)] = "cust.user.password" readonly>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Movie Name</label>
+                <input type="text"   name="cust.movie.movieName" id="" class="form-control" placeholder="Enter Movie Name"   [(ngModel)] = "cust.movie.movieName" readonly>
+                
+  
+            </div>
+           
+            <br>
+            <div class="from-group">
+              <button (click)="deleteCust() " class="btn btn-danger btn-md"><i class="far fa-trash-alt">&nbsp;</i>Delete Customer</button>  
+            </div>
+                
+            </form>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
+

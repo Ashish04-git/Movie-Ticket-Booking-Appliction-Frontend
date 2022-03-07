@@ -1,0 +1,75 @@
+<!-- <a [routerLink]="['/booking']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+        Delete Booking
+        </h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+  <div class="col-5">
+    
+      
+            <form>
+                <div class="from-group">
+                    <label for="name">Booking Id</label>
+                    <input type="text" name="id" id="" class="form-control" placeholder="Enter Booking Id" [(ngModel)] = "id">
+                </div>
+                <br>
+                <div class="from-group">
+                    <button (click)="viewBookingById()" class="btn btn-warning btn-md">Get Movie</button>
+                </div>
+                <br>
+            </form>
+        </div>
+         <div *ngIf = "flag">
+            <form>
+                
+                <div class="from-group">
+                    <label for="name">Booking Status</label>
+                    <input type="text" name="booking.transactionStatus" id="" class="form-control" [(ngModel)] = "booking.transactionStatus" readonly>
+                </div>
+                <br>
+                <br>
+            <div class="form-group">
+                <label for="name">Booking Cost</label>
+                <input type="text"   name="booking.totalCost" id="" class="form-control"  [(ngModel)] = "booking.totalCost" readonly>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Booking Date</label>
+                <input type="text"   name="booking.bookingDate" id="" class="form-control"  [(ngModel)] = "booking.bookingDate" readonly>
+  
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="name">Customer Name</label>
+                <input type="text"   name="booking.customer.customerName" id="" class="form-control"  [(ngModel)] = "booking.customer.customerName" readonly>
+  
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="name">Movie Name</label>
+                <input type="text"   name="booking.customer.movie.movieName" id="" class="form-control" [(ngModel)] = "booking.customer.movie.movieName" readonly>
+  
+            </div>
+
+           
+            <br>
+            <div class="from-group">
+              <button (click)="deleteBooking()" class="btn btn-danger btn-md"><i class="far fa-trash-alt">&nbsp;</i>Delete Booking</button>  
+            </div>
+                
+            </form>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,50 @@
+
+
+
+<!-- <a [routerLink]="['/customer']" class ="btn btn-danger">Back</a> -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="h4">
+        Customer List
+      </h1>
+     
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <table class="table table-sm table-primary">
+          <thead class="table-success" style="border:5px double">
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Address</th>
+                <th>User ID</th>
+                <th>User Pass</th>
+                <th>Movie ID</th>
+                <th>Movie Name</th>
+        
+              
+            </tr>
+        </thead>
+        <tbody style="border:5px double">
+          <tr *ngFor = "let c of customers" style="border:5px double">
+            
+                <td>{{c.customerId}}</td>
+                <td>{{c.customerName}}</td>
+                <td>{{c.address}}</td>
+                <td>{{c.user.userId}}</td>
+                <td>{{c.user.password}}</td>
+                <td>{{c.movie.movieId}}</td>
+                <td>{{c.movie.movieName}}</td>
+          
+
+             
+          </tr>
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>

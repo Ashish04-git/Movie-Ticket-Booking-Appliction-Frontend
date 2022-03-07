@@ -1,0 +1,59 @@
+<!-- <a [routerLink]="['/booking']" class="btn btn-danger">Back</a>
+<router-outlet>
+
+    
+</router-outlet> -->
+
+<h1><i><u><b>Bookings List By Date</b></u></i></h1>
+
+<table>
+    <tr>
+       <td> Enter Date :</td> 
+       <td><input type="text" width=50 name="booking.bookingDate" [(ngModel)]="booking.bookingDate"></td>
+    </tr>
+    <tr>
+        <button (click)="viewBookingByDate()" class="btn btn-secondary">View Bookings</button>
+    </tr>
+</table>
+
+<form>
+    <div *ngIf="flag">
+    <table border="2" class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Booking ID</th>
+            <th>Booking Mode</th>
+            <th>Booking Status</th>
+            <th>Booking Cost</th>
+            <th>Date</th>
+            <th>Customer Name</th>
+            <th>Movie ID</th>
+            <th>Movie Name</th>
+            <th>Show ID</th>
+            <th>Show Time</th>
+            <th>Screen ID</th>
+            <th>Screen Name</th>
+
+        </tr>
+        </thead>
+        <tr *ngFor="let b of bookings">
+            <td>{{b.transactionId}}</td>
+            <td>{{b.transactionMode}}</td>
+            <td>{{b.transactionStatus}}</td>
+            <td>{{b.totalCost}}</td>
+            <td>{{b.bookingDate}}</td>
+            <td>{{b.customer.customerName}}</td>
+            <td>{{b.customer.movie.movieId}}</td>
+            <td>{{b.customer.movie.movieName}}</td>
+            <td>{{b.showId.showId}}</td>
+            <td>{{b.showId.showStartTime}}</td>
+            <td>{{b.showId.screens.screenId}}</td>
+            <td>{{b.showId.screens.screenName}}</td>
+            
+
+        </tr>
+
+
+    </table>
+    </div>
+</form>
